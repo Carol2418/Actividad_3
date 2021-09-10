@@ -38,6 +38,6 @@
         </thead>
     </table>
     <a href="{{route('apprentice.index')}}" class="btn btn-success  btn-sm">Volver al inicio</a>
-    <a href="" class="btn btn-success  btn-sm">Editar Aprendiz</a>
+    <a href="{{route('apprentice.edit',$apprentice->id)}}" class="btn btn-success  btn-sm">Editar Aprendiz</a>
 </div>
 @endsection

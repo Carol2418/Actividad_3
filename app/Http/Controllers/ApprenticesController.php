@@ -73,7 +73,17 @@ class ApprenticesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+        $apprentice = apprentice::find($id)->update([
+            'full_name'=>$request->input('full_name'),
+            'N_document'=>$request->input('N_document'),
+            'email'=>$request->input('email'),
+            'phone'=>$request->input('phone'),
+            'age'=>$request->input('age'),
+            'classroom_leader'=>$request->input('classroom_leader'),
+            'address'=>$request->input('address')
+
+
+        ]);
     }
 
     /**
