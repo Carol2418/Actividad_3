@@ -16,3 +16,5 @@ use App\Http\Controllers\ApprenticesController;
 
 Route::get('apprentice',[ ApprenticesController::class,'index'])->name('apprentice.index');
 Route::get('apprentice/{id}',[ ApprenticesController::class,'show'])->name('apprentice.show');
+Route::get('apprentice/{id}/edit',[ ApprenticesController::class,'edit'])->name('apprentice.edit');
+Route::put('apprentice/{id}',[ ApprenticesController::class,'update'])->name('apprentice.update');

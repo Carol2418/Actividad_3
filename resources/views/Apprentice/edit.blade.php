@@ -8,32 +8,41 @@
             @csrf
             @method('PUT')
             <div class="table-responsive"></div>
-            <table class="table table-secondary" >
+            <table class="table table-success" >
                 <thead >
                 <tr>
-                    <td>NOMBRE</td>
-                    <td><input type="text" class="Form-control" name="name" value="{{$product->name}}"></td>
+                    <th>NOMBRE COMPLETO</th>
+                    <td><input type="text" class="Form-control" name="name" value="{{$apprentice->full_name}}"></td>
                 </tr>
                 <tr>
-                    <td>DESCRPTIÓN</td>
-                    <td><input type="text" class="Form-control" name="description" value="{{$product->description}}"></td>
+                    <th>N. IDENTIFICACIÓN</th>
+                    <td><input type="text" class="Form-control" name="description" value="{{$apprentice->N_document}}"></td>
                 </tr>
                 <tr>
-                    <td>PRECIO</td>
-                    <td><input type="text" class="Form-control" name="price" value="{{$product->price}}"></td>
+                    <th>CORREO</th>
+                    <td><input type="text" class="Form-control" name="price" value="{{$apprentice->email}}"></td>
                 </tr>
                 <tr>
-                    <td>IMAGEN</td>
-                    <td><input type="text" class="Form-control" name="image" value="{{$product->image}}"></td>
+                    <th>TELEFONO</th>
+                    <td><input type="text" class="Form-control" name="image" value="{{$apprentice->phone}}"></td>
                 </tr>
                 <tr>
-                    <td>COMPAÑIA</td>
-                    <td><input type="text" class="Form-control" name="companies_id" value="{{$product->companies_id}}"></td>
+                    <th>EDAD</th>
+                    <td><input type="text" class="Form-control" name="companies_id" value="{{$apprentice->age}}"></td>
+                </tr>
+                <tr>
+                    <th>¿ERES VOCERO?</th>
+                    <td><input type="radio" name="Vocero" value="{{$apprentice->classroom_leader}}">Si
+                    <input type="radio" name="Vocero" value="{{$apprentice->classroom_leader}}">No</td>
+                </tr>
+                <tr>
+                    <th>DIRECCIÓN</th>
+                    <td><input type="text" class="Form-control" name="companies_id" value="{{$apprentice->address}}"></td>
                 </tr>
                 </thead>
             </table>
-            <button type="submit" class="btn btn-dark  btn-sm">Guardar Producto</button>
-            <a href="{{route('products.index')}}" class="btn btn-dark btn-sm">Volver al inicio</a>
+            <button type="submit" class="btn btn-success  btn-sm">Actualizar Aprendiz</button>
+            <a href="{{route('apprentice.index')}}" class="btn btn-dark btn-sm">Volver al inicio</a>
         </form>
 
     </div>
