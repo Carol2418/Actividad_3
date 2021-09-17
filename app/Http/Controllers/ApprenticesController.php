@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\apprentice;
+use App\Models\study_day;
 use Illuminate\Http\Request;
 
 class ApprenticesController extends Controller
@@ -25,7 +26,7 @@ class ApprenticesController extends Controller
      */
     public function create()
     {
-        //
+        return view('apprentice.create');
     }
 
     /**
@@ -36,7 +37,16 @@ class ApprenticesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $apprentices = apprentice::create([
+            'full_name'=>$request->input('full_name'),
+            'N_document'=>$request->input('N_document'),
+            'email'=>$request->input('email'),
+            'phone'=>$request->input('phone'),
+            'age'=>$request->input('age'),
+            'classroom_leader'=>$request->input('classroom_leader'),
+            'address'=>$request->input('address')
+        ]);
+        return redirect()->route('apprentice.index');
     }
 
     /**
@@ -84,6 +94,7 @@ class ApprenticesController extends Controller
 
 
         ]);
+        return redirect()->route('apprentice.index');
     }
 
     /**
@@ -94,6 +105,7 @@ class ApprenticesController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $apprentice=apprentice::find($id)->delete();
+        return redirect()->route('apprentice.index');
     }
 }

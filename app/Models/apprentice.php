@@ -11,7 +11,7 @@ class apprentice extends Model
     protected $table = 'apprentice';
     protected $primaryKey = 'id';
     protected $fillable = [
-        'fullname',
+        'full_name',
         'N_document',
         'email',
         'phone',

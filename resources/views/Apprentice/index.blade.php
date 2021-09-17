@@ -27,17 +27,19 @@
 
 
                 <td>
-                    <form action="" method="post">
+                    <form action="{{route('apprentice.destroy', $apprentice->id)}}" method="post">
+                        @csrf
+                        @method('DELETE')
                         <a href="{{route('apprentice.show',$apprentice->id)}}" class="btn btn-success btn-sm">Detalles</a>
-                        <a href="" class="btn btn-success btn-sm">Editar</a>
-                        <button type="submit" class="btn btn-success btn-sm">Eliminar</button>
+                        <a href="{{route('apprentice.edit',$apprentice->id)}}" class="btn btn-success btn-sm">Editar</a>
+                        <button type="submit" class="btn btn-success btn-sm">Eliminar </button>
                     </form>
                 </td>
             </tr>
         @endforeach
         </tbody>
     </table>
-    <a href="" class="btn btn-success  btn-sm mb-3 mt-3" >Registrar un nuevo aprendiz</a>
+    <a href="{{route('apprentice.create')}}" class="btn btn-success  btn-sm mb-3 mt-3" >Registrar un nuevo aprendiz</a>
 </div>
 
 @endsection
